@@ -5,7 +5,7 @@ while True:
     if usr_number == "0":
         break
 
-    my_list.insert(0, usr_number)
+    my_list.insert(0, int(usr_number))
     for i in range(1, len(my_list)):
         if my_list[i] >= my_list[i - 1]:
             my_list[i], my_list[i - 1] = my_list[i - 1], my_list[i]
