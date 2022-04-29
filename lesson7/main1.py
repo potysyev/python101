@@ -6,7 +6,7 @@ class Matrix:
         for i in range(self.row):
             j.append(len(matrix[i]))
         if len(set(j)) > 1:
-            raise RuntimeError("Column size is not constant")
+            raise ValueError("Column size is not constant")
         self.col = len(j)
 
     def __str__(self):

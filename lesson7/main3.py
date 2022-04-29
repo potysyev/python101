@@ -3,7 +3,7 @@ class Cell:
         if isinstance(cells_number, int):
             self.cells_number = cells_number
         else:
-            raise RuntimeError("Cells size is not integer")
+            raise ValueError("Cells size is not integer")
 
     def __str__(self):
         return str(f"Number of cells {self.cells_number}")
@@ -12,28 +12,28 @@ class Cell:
         if isinstance(self, Cell) and isinstance(other, Cell):
             return Cell(self.cells_number + other.cells_number)
         else:
-            raise RuntimeError("Both arguments must be Cell class")
+            raise ValueError("Both arguments must be Cell class")
 
     def __sub__(self, other):
         if isinstance(self, Cell) and isinstance(other, Cell):
             if self.cells_number - other.cells_number > 0:
                 return Cell(self.cells_number - other.cells_number)
             else:
-                raise RuntimeError("Difference between arguments must be greater zero")
+                raise ValueError("Difference between arguments must be greater zero")
         else:
-            raise RuntimeError("Both arguments must be Cell class")
+            raise ValueError("Both arguments must be Cell class")
 
     def __mul__(self, other):
         if isinstance(self, Cell) and isinstance(other, Cell):
             return Cell(self.cells_number * other.cells_number)
         else:
-            raise RuntimeError("Both arguments must be Cell class")
+            raise ValueError("Both arguments must be Cell class")
 
     def __truediv__(self, other):
         if isinstance(self, Cell) and isinstance(other, Cell):
             return Cell(self.cells_number // other.cells_number)
         else:
-            raise RuntimeError("Both arguments must be Cell class")
+            raise ValueError("Both arguments must be Cell class")
 
     def make_order(self, linelen):
         output = []
